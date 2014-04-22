@@ -13,10 +13,12 @@ def declareWinner(p1: Player, p2: Player): Unit =
 def printWinner(p1: Player): Unit =
   println(p1 + " is the winner")
 
-def winner(p1: Player, p2: Player): Player =
+def winner(p1: Player, p2: Player): Player = {
+  println(p1 + ":" + p2)
   if (p1.score > p2.score) p1 else p2
+}
 
-val players = List(Player("Sue", 7), Player("Bob", 18), Player("Joe", 11))
+val players = List(Player("Sue", 70), Player("Bob", 18), Player("Joe", 11), Player("Bill", 100))
 declareWinner(players)
 
 val sue = Player("Sue", 7.9999999999999999)
