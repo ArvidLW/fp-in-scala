@@ -1,5 +1,6 @@
 def fib(n: Int): Int = {
 
+  @annotation.tailrec
   def go(n: Int, curr: Int, next: Int): Int = 
     if(n <= 0) next else go(n-1, next, curr+next)
 
