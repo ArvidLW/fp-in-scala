@@ -1,12 +1,12 @@
-def isSorted[A](as: Array[A], gt: (A,A) => Boolean): Boolean = {
+def isSorted[A](as: Array[A], p: (A,A) => Boolean): Boolean = {
 
   @annotation.tailrec
   def go(curr: Int, next: Int, flag: Boolean): Boolean = {
     // Return once at end of list
     if(as.length == next) flag
     else {
-      // println(s"Curr:${as(curr)} <= Next:${as(next)} = ${gt(as(curr), as(next))}")
-      if(!gt(as(curr), as(next))) 
+      // println(s"Curr:${as(curr)} <= Next:${as(next)} = ${p(as(curr), as(next))}")
+      if(!p(as(curr), as(next))) 
         false // not sorted, failed
       else 
         go(next, next+1, flag) // sorted so far...
